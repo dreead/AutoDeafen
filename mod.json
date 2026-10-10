@@ -1,0 +1,10 @@
+{
+  "geode": "4.6.0",
+  "gd": { "win": "2.2081", "mac": "2.2081" },
+  "version": "v1.0.0",
+  "id": "dread.autodeafen",
+  "name": "Auto Deafen",
+  "developer": "dread",
+  "description": "Presses a keybind to deafen/undeafen at set level percentages.",
+  "resources": { "sprites": ["resources/*.png"] }
+}
