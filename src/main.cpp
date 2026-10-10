@@ -145,11 +145,12 @@ class $modify(ADKeys, CCKeyboardDispatcher) {
     }
 };
 
-class DeafenPopup : public Popup<> {
+class DeafenPopup : public Popup {
     CCNode* m_content = nullptr;
     ButtonSprite* m_keySpr = nullptr;
 
-    bool setup() override {
+    bool init() {
+        if (!Popup::init(360.f, 360.f)) return false;
         this->setTitle("Auto Deafen");
         g_onCap = [this] { this->build(); };
         this->build();
@@ -236,7 +237,7 @@ class DeafenPopup : public Popup<> {
 public:
     static DeafenPopup* create() {
         auto r = new DeafenPopup();
-        if (r->initAnchored(360.f, 360.f)) { r->autorelease(); return r; }
+        if (r->init()) { r->autorelease(); return r; }
         delete r; return nullptr;
     }
 };
